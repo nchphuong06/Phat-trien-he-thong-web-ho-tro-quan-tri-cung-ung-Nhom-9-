@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - Hệ thống Quản Lý Kho</title>
+    <title>Đăng nhập - FlowLink SCM</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -41,8 +41,8 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1>Hệ Thống Quản Lý Kho</h1>
-            <p>Đăng nhập điều hành hệ thống logistics</p>
+            <h1>FlowLink SCM</h1>
+            <p>Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</p>
         </div>
 
         <div class="login-body">
@@ -100,7 +100,7 @@
             <div class="google-note">Đăng nhập tức thì bằng Google, bảo mật và không cần nhập mật khẩu nếu bạn đã đăng nhập Google.</div>
 
             <div class="register-link">
-                Chưa có tài khoản quản lý kho? <a onclick="openRegisterModal()">Đăng ký tài khoản mới</a>
+                Chưa có tài khoản FlowLink SCM? <a onclick="openRegisterModal()">Đăng ký tài khoản mới</a>
             </div>
         </div>
     </div>
