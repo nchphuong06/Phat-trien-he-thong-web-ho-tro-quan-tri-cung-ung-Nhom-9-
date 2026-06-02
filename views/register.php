@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký tài khoản - Hệ thống Quản Lý Kho</title>
+    <title>Đăng ký tài khoản - FlowLink SCM</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -37,8 +37,8 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1 id="header-title">Đăng ký tài khoản Kho</h1>
-            <p id="header-desc">Hệ thống quản lý chuỗi cung ứng logistics</p>
+            <h1 id="header-title">Đăng ký tài khoản FlowLink SCM</h1>
+            <p id="header-desc">Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</p>
         </div>
 
         <div class="login-body">
@@ -168,7 +168,7 @@
     </script>
 
     <div class="footer-text" style="text-align: center; margin-top: 15px; color: #e8f1f5; font-size: 0.85rem;">
-        © 2026 Warehouse Management System - Powered by Google OAuth 2.0 Identity Server
+        © 2026 FlowLink SCM - Powered by Google OAuth 2.0 Identity Server
     </div>
 </body>
 </html>
