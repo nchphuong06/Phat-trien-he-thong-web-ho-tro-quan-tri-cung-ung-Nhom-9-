@@ -152,7 +152,7 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Quản Lý Kho Chuẩn Odoo</title>
+    <title>FlowLink SCM</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { display: flex; background-color: #f4f6f9; min-height: 100vh; color: #333333; }
@@ -233,7 +233,7 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
 <body>
 
     <aside class="sidebar">
-        <div class="sidebar-brand">📦 Warehouse</div>
+        <div class="sidebar-brand">FlowLink SCM</div>
         <ul class="sidebar-menu">
             <li><a href="index.php?page=dashboard">📊 Dashboard</a></li>
             <li><a href="index.php?page=products">📦 Sản phẩm</a></li>
@@ -251,7 +251,7 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
 
     <div class="main-content">
         <header class="main-header">
-            <div class="page-title">⚙️ Hệ thống điều phối dữ liệu</div>
+            <div class="page-title">Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</div>
             
             <div class="user-profile" id="userProfileTrigger">
                 <div class="user-info">
