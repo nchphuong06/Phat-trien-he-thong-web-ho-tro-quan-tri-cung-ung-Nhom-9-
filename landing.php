@@ -66,7 +66,7 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ thống Quản lý Kho hàng Thông minh - WMS Cloud</title>
+    <title>FlowLink SCM - Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -189,9 +189,9 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 mb-3 rounded-pill text-uppercase fw-semibold" style="background-color: rgba(37,99,235,0.15) !important;">Giải pháp vận hành kho 4.0</span>
-                    <h1 class="display-4 fw-bold lh-sm mb-3">Quản lý kho thông minh, tối ưu hóa chuỗi cung ứng</h1>
-                    <p class="lead opacity-75 mb-4">Hệ thống WMS hiện đại giúp theo dõi tồn kho thời gian thực, tự động hóa quy trình nhập xuất kho theo chuẩn Odoo Stock Picking, loại bỏ hoàn toàn sai sót thủ công.</p>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 mb-3 rounded-pill text-uppercase fw-semibold" style="background-color: rgba(37,99,235,0.15) !important;">Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</span>
+                    <h1 class="display-4 fw-bold lh-sm mb-3">FlowLink SCM</h1>
+                    <p class="lead opacity-75 mb-4">Nền tảng hỗ trợ quản trị chuỗi cung ứng và vận hành kho linh hoạt, giúp doanh nghiệp kết nối dữ liệu, điều phối hàng hóa và theo dõi tồn kho hiệu quả.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <?php if ($is_logged_in): ?>
                             <a class="btn btn-accent btn-lg px-4 py-3 fs-6" href="index.php">Đến trung tâm quản lý <i class="fa-solid fa-arrow-right ms-2"></i></a>
@@ -302,8 +302,8 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
 
     <footer>
         <div class="container text-center">
-            <p class="mb-2 fw-semibold text-white">Warehouse Management System (WMS Cloud)</p>
-            <p class="mb-0 text-muted small">© <?php echo date('Y'); ?> Dự án Kho vận thông minh. Phát triển dựa trên nền tảng PHP thuần & Bootstrap 5.</p>
+            <p class="mb-2 fw-semibold text-white">FlowLink SCM</p>
+            <p class="mb-0 text-muted small">© <?php echo date('Y'); ?> Dự án FlowLink SCM. Phát triển dựa trên nền tảng PHP thuần & Bootstrap 5.</p>
         </div>
     </footer>
 
