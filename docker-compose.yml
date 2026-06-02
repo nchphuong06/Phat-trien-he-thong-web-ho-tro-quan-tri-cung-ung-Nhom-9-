@@ -1,0 +1,45 @@
+services:
+  # Lớp 1: Máy chủ Web chạy PHP và Apache
+  web:
+    build: . # Chạy thông qua Dockerfile vừa tạo ở trên
+    ports:
+      - "8888:80" # Cổng truy cập máy thật: localhost:8888
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - erp_network
+
+  # Lớp 2: Cơ sở dữ liệu MySQL
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: login
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+    ports:
+      - "3307:3306" # ĐỔI THÀNH 3307 để loại bỏ hoàn toàn lỗi xung đột cổng máy thật
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./_installation:/docker-entrypoint-initdb.d
+    networks:
+      - erp_network
+
+  # Lớp 3: Trình quản lý Database trực quan (Adminer)
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8084:8080" # Truy cập quản lý DB qua: localhost:8084
+    networks:
+      - erp_network
+
+volumes:
+  db_data:
+
+networks:
+  erp_network:
+    driver: bridge
