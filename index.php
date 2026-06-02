@@ -235,7 +235,10 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
 <body>
 
     <aside class="sidebar">
-        <div class="sidebar-brand">FlowLink SCM</div>
+        <div class="sidebar-brand">
+            <img src="logo.png" alt="FlowLink SCM Logo" style="width: 38px; height: 38px; object-fit: contain; margin-right: 8px;">
+            <span>FlowLink SCM</span>
+        </div>
         <ul class="sidebar-menu">
             <li><a href="index.php?page=dashboard">📊 Dashboard</a></li>
             <li><a href="index.php?page=products">📦 Sản phẩm</a></li>
