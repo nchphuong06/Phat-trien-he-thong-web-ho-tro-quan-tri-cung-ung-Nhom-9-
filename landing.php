@@ -64,6 +64,8 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlowLink SCM - Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</title>
