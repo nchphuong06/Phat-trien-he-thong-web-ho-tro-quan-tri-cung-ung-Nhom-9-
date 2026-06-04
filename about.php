@@ -31,23 +31,32 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
             --text-muted: #64748b;
             --bg-light: #F4F6F9;
         }
+
+        /* BODY - Giữ nguyên các thuộc tính đè mới nhất và font-family cũ có !important */
         body {
             font-family: 'Roboto', sans-serif !important;
-            color: #1e293b;
             overflow-x: hidden;
-            background-color: var(--bg-light);
+            background: #f8fafc;
+            color: #0f172a;
         }
-        .navbar {
-            background-color: var(--primary-color);
-            backdrop-filter: blur(6px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
+
+        /* NAVBAR & SITE HEADER - Đã gộp và giữ lại dải màu Emerald Gradient mới nhất */
+        .navbar,
+        .site-header,
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%) !important;
+            border-bottom: 1px solid rgba(167, 243, 208, 0.18);
+            transition: all 0.3s ease; /* Giữ hiệu ứng chuyển động từ code cũ */
         }
+
+        /* HERO SECTION - Giữ hiệu ứng sóng SVG cũ và đè dải màu radial gradient mới nhất xuống cuối */
         .hero-section {
-            background: linear-gradient(180deg, rgba(30,42,56,0.95) 0%, rgba(23,137,120,0.05) 100%);
-            color: #ffffff;
+            color: #ffffff !important;
+            overflow: hidden;
             padding: 120px 0 80px 0;
             position: relative;
+            background:
+                linear-gradient(180deg, #022c22 0%, #064e3b 42%, #059669 76%, #a7f3d0 100%) !important;
         }
         .hero-section::after {
             content: '';
@@ -56,107 +65,51 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,160L120,176C240,192,480,224,720,224C960,224,1200,192,1320,176L1440,160L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
             background-size: cover;
         }
-        .btn-accent {
-            background-color: var(--accent-color);
-            color: white;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-            border: none;
-            transition: all 0.18s ease;
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
         }
-        .btn-accent:hover {
-            background-color: #149061;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(23,137,120,0.12);
-        }
-        footer {
-            background-color: var(--primary-color);
-            color: #cbd5da;
-            padding: 48px 0 28px 0;
-            font-size: 0.95rem;
-        }
-        .footer-link { color: rgba(255,255,255,0.9); text-decoration: none; }
-        .footer-small { color: rgba(255,255,255,0.7); }
-        .social-icon { color: white; opacity: 0.9; margin-left: 8px; }
-        .about-content {
-            background: white;
-            padding: 60px 0;
-            border-top: 1px solid rgba(30,42,56,0.04);
-        }
-        .about-text {
-            font-family: 'Roboto', sans-serif;
-            color: #334155;
-            font-size: 1.08rem;
-            line-height: 1.9;
-            text-align: left;
-        }
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        /* ===== ABOUT PAGE - EMERALD GRADIENT THEME ===== */
-        body {
-            background: #f8fafc;
-            color: #0f172a;
-        }
-        /* Thanh navbar */
-        .navbar,
-        .site-header,
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%) !important;
-            border-bottom: 1px solid rgba(167, 243, 208, 0.18);
-        }
-        /* Hero About Us */
+
+        /* HERO ABOUT US - Các khối Hero trang con */
         .about-hero,
         .hero,
         .page-hero,
         .about-header {
             background:
-                radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 28%),
-                radial-gradient(circle at 85% 15%, rgba(5, 150, 105, 0.28), transparent 32%),
-                linear-gradient(135deg, #022c22 0%, #064e3b 38%, #059669 72%, #a7f3d0 100%) !important;
+                linear-gradient(180deg, #022c22 0%, #064e3b 42%, #059669 76%, #a7f3d0 100%) !important;
             color: #ffffff !important;
         }
-        /* Tiêu đề hero */
+        .hero-section h1,
         .about-hero h1,
         .hero h1,
         .page-hero h1,
         .about-header h1 {
             color: #ffffff !important;
-            font-weight: 800;
+            opacity: 1 !important;
+            font-weight: 850;
             letter-spacing: -0.04em;
+            text-shadow: 0 8px 28px rgba(2, 44, 34, 0.35);
         }
-        /* Mô tả hero */
-        .about-hero p,
-        .hero p,
-        .page-hero p,
-        .about-header p {
-            color: rgba(255, 255, 255, 0.88) !important;
+        .hero-section, .about-hero p, .hero p, .page-hero p, .about-header p {
+            color: rgba(255, 255, 255, 0.92) !important;
+            opacity: 1 !important;
         }
-        /* Khung bên phải trong hero */
-        .about-hero .card,
-        .hero .card,
-        .page-hero .card,
-        .about-header .card {
-            background: rgba(255, 255, 255, 0.12) !important;
-            border: 1px solid rgba(209, 250, 229, 0.35) !important;
+        .hero-section .card, .about-hero .card, .hero .card, .page-hero .card, .about-header .card {
+            background: rgba(255, 255, 255, 0.13) !important;
+            border: 1px solid rgba(209, 250, 229, 0.38) !important;
             box-shadow: 0 24px 60px rgba(2, 44, 34, 0.22);
             backdrop-filter: blur(14px);
             color: #ffffff !important;
         }
-        /* Link active và điểm nhấn emerald */
-        .navbar a:hover,
-        .site-header a:hover,
-        header a:hover,
-        .text-emerald,
-        .brand span,
-        .logo span {
-            color: #34d399 !important;
-        }
-        /* Nút dùng thử ngay */
+
+        /* BUTTONS - Loại bỏ hoàn toàn các màu nền cũ (đã bị đè bởi dải màu Gradient) */
         .btn-primary,
         .btn-accent,
         .btn-success {
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 8px;
+            transition: all 0.18s ease;
             background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
             border-color: #059669 !important;
             color: #ffffff !important;
@@ -170,7 +123,6 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
             color: #ffffff !important;
             transform: translateY(-2px);
         }
-        /* Nút đăng nhập dạng viền */
         .btn-outline-light,
         .btn-outline-primary {
             border-color: rgba(167, 243, 208, 0.7) !important;
@@ -181,11 +133,34 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
             background: rgba(16, 185, 129, 0.16) !important;
             border-color: #34d399 !important;
         }
-        /* Phần nội dung giới thiệu */
+
+        /* LINKS & BRAND HOVER */
+        .navbar a:hover,
+        .site-header a:hover,
+        header a:hover,
+        .text-emerald,
+        .brand span,
+        .logo span {
+            color: #34d399 !important;
+        }
+
+        /* ABOUT CONTENT - Đồng bộ cỡ chữ 18px mới và loại bỏ các thuộc tính nền cũ */
         .about-content,
         .about-section,
         main section {
             background: #ffffff;
+            padding: 60px 0;
+            border-top: 1px solid rgba(30,42,56,0.04);
+        }
+        .about-text {
+            font-family: 'Roboto', sans-serif;
+            color: #334155;
+            font-size: 1.08rem;
+            line-height: 1.9;
+            text-align: left;
+        }
+        .about-text p {
+            margin-bottom: 20px;
         }
         .about-content p,
         .about-section p,
@@ -194,241 +169,80 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
             font-size: 18px;
             line-height: 1.9;
         }
-        /* Footer đồng bộ màu */
+
+        /* FOOTER - Đồng bộ màu tối và dải màu Gradient mới nhất */
         footer,
         .footer {
+            padding: 48px 0 28px 0;
+            font-size: 0.95rem;
             background: linear-gradient(135deg, #0f172a 0%, #022c22 100%) !important;
             color: #e2e8f0 !important;
             border-top: 1px solid rgba(167, 243, 208, 0.16);
         }
-        footer h5,
-        footer h6,
-        .footer h5,
-        .footer h6 {
+        footer h5, footer h6, .footer h5, .footer h6 {
             color: #ffffff !important;
         }
-        footer a,
-        .footer a {
+        footer a, .footer a {
             color: #cbd5e1 !important;
+            text-decoration: none;
         }
-        footer a:hover,
-        .footer a:hover {
+        footer a:hover, .footer a:hover {
             color: #34d399 !important;
         }
+        .footer-link { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .footer-small { color: rgba(255,255,255,0.7); }
+        .social-icon { color: white; opacity: 0.9; margin-left: 8px; }
+
+        /* FEATURE GRID (Giữ nguyên vì không bị trùng lặp) */
         .about-feature-grid {
-    margin-top: 36px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
+            margin-top: 36px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .about-feature-card {
+            background: #ffffff;
+            border: 1px solid rgba(16, 185, 129, 0.18);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+            transition: all 0.22s ease;
+        }
+        .about-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 54px rgba(15, 23, 42, 0.12);
+            border-color: rgba(16, 185, 129, 0.38);
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 20px;
+        }
+        .about-feature-card h3 {
+            color: #064e3b;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .about-feature-card p {
+            color: #475569;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin: 0;
+        }
 
-.about-feature-card {
-    background: #ffffff;
-    border: 1px solid rgba(16, 185, 129, 0.18);
-    border-radius: 22px;
-    padding: 28px;
-    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
-    transition: all 0.22s ease;
-}
-
-.about-feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 54px rgba(15, 23, 42, 0.12);
-    border-color: rgba(16, 185, 129, 0.38);
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
-    font-size: 20px;
-}
-
-.about-feature-card h3 {
-    color: #064e3b;
-    font-size: 1.15rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-}
-
-.about-feature-card p {
-    color: #475569;
-    font-size: 0.98rem;
-    line-height: 1.7;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .about-feature-grid {
-        grid-template-columns: 1fr;
-    }
-}
-       /* ===== SYNC ABOUT PAGE WITH LANDING EMERALD THEME ===== */
-
-/* Nền hero About us giống landing page */
-.hero-section {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 28%),
-        radial-gradient(circle at 85% 18%, rgba(52, 211, 153, 0.26), transparent 32%),
-        linear-gradient(135deg, #022c22 0%, #064e3b 38%, #059669 72%, #a7f3d0 100%) !important;
-    color: #ffffff !important;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Tạo lớp phủ tối nhẹ bên trái để chữ dễ đọc hơn */
-.hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(2, 44, 34, 0.72) 0%,
-        rgba(6, 78, 59, 0.48) 48%,
-        rgba(167, 243, 208, 0.12) 100%
-    );
-    pointer-events: none;
-}
-
-/* Đảm bảo nội dung nằm trên lớp phủ */
-.hero-section .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* Tiêu đề Về FlowLink SCM */
-.hero-section h1 {
-    color: #ffffff !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.04em;
-    text-shadow: 0 12px 32px rgba(2, 44, 34, 0.22);
-}
-
-/* Mô tả dưới tiêu đề */
-.hero-section p {
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Khung bên phải trong hero */
-.hero-section .card,
-.hero-section .glass-card,
-.hero-section .hero-card,
-.hero-section .info-card {
-    background: rgba(255, 255, 255, 0.13) !important;
-    border: 1px solid rgba(209, 250, 229, 0.38) !important;
-    color: #ffffff !important;
-    box-shadow: 0 24px 60px rgba(2, 44, 34, 0.22);
-    backdrop-filter: blur(14px);
-}
-
-/* Chữ trong khung bên phải */
-.hero-section .card h1,
-.hero-section .card h2,
-.hero-section .card h3,
-.hero-section .card h4,
-.hero-section .card h5,
-.hero-section .card p,
-.hero-section .glass-card h1,
-.hero-section .glass-card h2,
-.hero-section .glass-card h3,
-.hero-section .glass-card h4,
-.hero-section .glass-card h5,
-.hero-section .glass-card p,
-.hero-section .hero-card h1,
-.hero-section .hero-card h2,
-.hero-section .hero-card h3,
-.hero-section .hero-card h4,
-.hero-section .hero-card h5,
-.hero-section .hero-card p,
-.hero-section .info-card h1,
-.hero-section .info-card h2,
-.hero-section .info-card h3,
-.hero-section .info-card h4,
-.hero-section .info-card h5,
-.hero-section .info-card p {
-    color: #ffffff !important;
-}
-
-/* Navbar giữ cùng tone emerald/navy như landing */
-.navbar {
-    background: linear-gradient(135deg, #0f172a 0%, #022c22 48%, #064e3b 100%) !important;
-    border-bottom: 1px solid rgba(167, 243, 208, 0.16) !important;
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
-}
-
-/* Nút Dùng thử ngay cùng màu emerald */
-.btn-accent {
-    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
-    border-color: #059669 !important;
-    color: #ffffff !important;
-    box-shadow: 0 12px 28px rgba(5, 150, 105, 0.28);
-}
-
-.btn-accent:hover {
-    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-    border-color: #047857 !important;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 18px 36px rgba(5, 150, 105, 0.36);
-}
-
-/* Nút Đăng nhập dạng viền trắng xanh */
-.btn-outline-light,
-.btn-outline-primary {
-    color: #ffffff !important;
-    border-color: rgba(209, 250, 229, 0.65) !important;
-}
-
-.btn-outline-light:hover,
-.btn-outline-primary:hover {
-    background: rgba(16, 185, 129, 0.16) !important;
-    border-color: #34d399 !important;
-    color: #ffffff !important;
-}
-
-/* Footer đồng bộ tone emerald/navy */
-footer,
-.footer {
-    background: linear-gradient(135deg, #0f172a 0%, #022c22 55%, #064e3b 100%) !important;
-    color: #cbd5e1 !important;
-    border-top: 1px solid rgba(167, 243, 208, 0.16);
-}
-
-footer a,
-.footer a {
-    color: #cbd5e1 !important;
-}
-
-footer a:hover,
-.footer a:hover {
-    color: #34d399 !important;
-}
-        /* ===== FIX ABOUT HERO TITLE VISIBILITY ===== */
-.hero-section::before {
-    z-index: 0 !important;
-}
-
-.hero-section .container {
-    position: relative !important;
-    z-index: 2 !important;
-}
-
-.hero-section h1 {
-    color: #ffffff !important;
-    opacity: 1 !important;
-    font-weight: 850 !important;
-    letter-spacing: -0.045em;
-    text-shadow:
-        0 4px 18px rgba(2, 44, 34, 0.38),
-        0 14px 42px rgba(2, 44, 34, 0.28) !important;
-}
-
+        @media (max-width: 768px) {
+            .about-feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
