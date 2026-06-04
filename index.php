@@ -158,11 +158,11 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
         body { display: flex; background-color: #F4F6F9; min-height: 100vh; color: #333333; }
         
-        .sidebar { width: 260px; background-color: #178978; color: #ffffff; display: flex; flex-direction: column; box-shadow: 2px 0 8px rgba(0,0,0,0.06); }
+        .sidebar { width: 260px; background: linear-gradient(180deg, #0f172a 0%, #1E2A38 55%, #0f172a 100%); color: #ffffff; display: flex; flex-direction: column; box-shadow: 2px 0 12px rgba(15,23,42,0.18); }
         .sidebar-brand { padding: 18px 16px; text-align: left; font-size: 1.05rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.04); background-color: transparent; color: #ffffff; letter-spacing: 0.2px; display:flex; align-items:center; gap:10px; }
         .sidebar-menu { list-style: none; padding: 15px 0; flex: 1; }
         .sidebar-menu li { padding: 14px 20px; transition: all 0.2s ease-in-out; }
-        .sidebar-menu li:hover { background-color: rgba(23,137,120,0.06); padding-left: 22px; }
+        .sidebar-menu li:hover { background-color: rgba(255,255,255,0.08); padding-left: 22px; }
         .sidebar-menu a { color: rgba(255,255,255,0.92); text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; font-weight: 600; }
         .sidebar-menu li:hover a { color: #ffffff; }
         
@@ -244,7 +244,7 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
                 <rect x="14" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
             </svg>
             <div style="margin-left:6px; line-height:1;">
-                <div style="font-weight:700;">FlowLink <span style="color:#178978;">SCM</span></div>
+                <div style="font-weight:700;">FlowLink <span style="color:#34d399;">SCM</span></div>
                 <div style="font-size:0.75rem; color: rgba(255,255,255,0.75);">Hệ thống SCM</div>
             </div>
         </div>
