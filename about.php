@@ -269,6 +269,146 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         grid-template-columns: 1fr;
     }
 }
+       /* ===== SYNC ABOUT PAGE WITH LANDING EMERALD THEME ===== */
+
+/* Nền hero About us giống landing page */
+.hero-section {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(52, 211, 153, 0.26), transparent 32%),
+        linear-gradient(135deg, #022c22 0%, #064e3b 38%, #059669 72%, #a7f3d0 100%) !important;
+    color: #ffffff !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tạo lớp phủ tối nhẹ bên trái để chữ dễ đọc hơn */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(2, 44, 34, 0.72) 0%,
+        rgba(6, 78, 59, 0.48) 48%,
+        rgba(167, 243, 208, 0.12) 100%
+    );
+    pointer-events: none;
+}
+
+/* Đảm bảo nội dung nằm trên lớp phủ */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tiêu đề Về FlowLink SCM */
+.hero-section h1 {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em;
+    text-shadow: 0 12px 32px rgba(2, 44, 34, 0.22);
+}
+
+/* Mô tả dưới tiêu đề */
+.hero-section p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Khung bên phải trong hero */
+.hero-section .card,
+.hero-section .glass-card,
+.hero-section .hero-card,
+.hero-section .info-card {
+    background: rgba(255, 255, 255, 0.13) !important;
+    border: 1px solid rgba(209, 250, 229, 0.38) !important;
+    color: #ffffff !important;
+    box-shadow: 0 24px 60px rgba(2, 44, 34, 0.22);
+    backdrop-filter: blur(14px);
+}
+
+/* Chữ trong khung bên phải */
+.hero-section .card h1,
+.hero-section .card h2,
+.hero-section .card h3,
+.hero-section .card h4,
+.hero-section .card h5,
+.hero-section .card p,
+.hero-section .glass-card h1,
+.hero-section .glass-card h2,
+.hero-section .glass-card h3,
+.hero-section .glass-card h4,
+.hero-section .glass-card h5,
+.hero-section .glass-card p,
+.hero-section .hero-card h1,
+.hero-section .hero-card h2,
+.hero-section .hero-card h3,
+.hero-section .hero-card h4,
+.hero-section .hero-card h5,
+.hero-section .hero-card p,
+.hero-section .info-card h1,
+.hero-section .info-card h2,
+.hero-section .info-card h3,
+.hero-section .info-card h4,
+.hero-section .info-card h5,
+.hero-section .info-card p {
+    color: #ffffff !important;
+}
+
+/* Navbar giữ cùng tone emerald/navy như landing */
+.navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #022c22 48%, #064e3b 100%) !important;
+    border-bottom: 1px solid rgba(167, 243, 208, 0.16) !important;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+}
+
+/* Nút Dùng thử ngay cùng màu emerald */
+.btn-accent {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+    border-color: #059669 !important;
+    color: #ffffff !important;
+    box-shadow: 0 12px 28px rgba(5, 150, 105, 0.28);
+}
+
+.btn-accent:hover {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+    border-color: #047857 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(5, 150, 105, 0.36);
+}
+
+/* Nút Đăng nhập dạng viền trắng xanh */
+.btn-outline-light,
+.btn-outline-primary {
+    color: #ffffff !important;
+    border-color: rgba(209, 250, 229, 0.65) !important;
+}
+
+.btn-outline-light:hover,
+.btn-outline-primary:hover {
+    background: rgba(16, 185, 129, 0.16) !important;
+    border-color: #34d399 !important;
+    color: #ffffff !important;
+}
+
+/* Footer đồng bộ tone emerald/navy */
+footer,
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #022c22 55%, #064e3b 100%) !important;
+    color: #cbd5e1 !important;
+    border-top: 1px solid rgba(167, 243, 208, 0.16);
+}
+
+footer a,
+.footer a {
+    color: #cbd5e1 !important;
+}
+
+footer a:hover,
+.footer a:hover {
+    color: #34d399 !important;
+}
     </style>
 </head>
 <body>
