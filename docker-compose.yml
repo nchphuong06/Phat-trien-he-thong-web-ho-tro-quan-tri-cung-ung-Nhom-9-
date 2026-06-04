@@ -2,6 +2,8 @@ services:
   # Lớp 1: Máy chủ Web chạy PHP và Apache
   web:
     build: . # Chạy thông qua Dockerfile vừa tạo ở trên
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
     ports:
       - "8888:80" # Cổng truy cập máy thật: localhost:8888
     volumes:
