@@ -119,7 +119,7 @@ try {
             <h4>📈 Bảng Phân Tích Cơ Cấu Vốn Hàng Hóa</h4>
             <div style="margin: 10px 0 20px 0;">
                 <a href="index.php?page=reports&action=export_csv" 
-                    style="background-color: #27ae60; color: white; padding: 10px 16px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(39,174,96,0.15); transition: 0.2s; font-family: sans-serif;">
+                    style="background-color: #27ae60; color: white; padding: 10px 16px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(39,174,96,0.15); transition: 0.2s; font-family: 'Roboto', sans-serif;">
                     <i class="fas fa-file-excel"></i> 📥 Xuất báo cáo trực quan ra file Excel (.CSV)
                 </a>
             </div>

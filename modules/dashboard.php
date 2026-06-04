@@ -180,7 +180,7 @@ try {
 <style>
     .dashboard-container { animation: fadeIn 0.4s ease-in-out; }
     .dashboard-title { margin-bottom: 25px; }
-    .dashboard-title h2 { color: #1e3d59; font-size: 1.6rem; }
+    .dashboard-title h2 { color: #1E2A38; font-size: 1.6rem; }
     .dashboard-title p { color: #7f8c8d; font-size: 0.9rem; margin-top: 5px; }
 
     /* Định dạng lưới thẻ Card */
@@ -191,14 +191,14 @@ try {
     .card-info p { color: #7f8c8d; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
     
     /* Màu sắc nhận diện hệ thống */
-    .card-blue { border-bottom-color: #1e3d59; }
-    .card-green { border-bottom-color: #17b978; }
+    .card-blue { border-bottom-color: #1E2A38; }
+    .card-green { border-bottom-color: #178978; }
     .card-orange { border-bottom-color: #ff9f43; }
 
     /* Bố cục vùng chi tiết */
     .dashboard-details { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
     .detail-box { background: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-    .detail-box h4 { color: #1e3d59; margin-bottom: 15px; font-size: 1.05rem; border-bottom: 2px solid #f4f6f9; padding-bottom: 10px; }
+    .detail-box h4 { color: #1E2A38; margin-bottom: 15px; font-size: 1.05rem; border-bottom: 2px solid #f4f6f9; padding-bottom: 10px; }
 
     /* Định dạng bảng dữ liệu */
     .dashboard-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
@@ -213,23 +213,23 @@ try {
 
     /* Nút thao tác nhanh */
     .quick-links { display: flex; flex-direction: column; }
-    .link-btn { display: block; background: #1e3d59; color: white; padding: 12px; text-decoration: none; border-radius: 6px; text-align: center; font-weight: 500; font-size: 0.9rem; margin-bottom: 10px; transition: background 0.2s; }
-    .link-btn:hover { background: #17b978; }
+    .link-btn { display: block; background: #1E2A38; color: white; padding: 12px; text-decoration: none; border-radius: 6px; text-align: center; font-weight: 500; font-size: 0.9rem; margin-bottom: 10px; transition: background 0.2s; }
+    .link-btn:hover { background: #178978; }
     .link-btn-secondary { background: #7f8c8d; }
     .link-btn-secondary:hover { background: #6c7a89; }
 
     /* 🔵 CSS ĐỘC LẬP CHO KHỐI TIỆN ÍCH LẤP ĐẦY KHOẢNG TRỐNG */
     .system-status-container { margin-top: 20px; padding: 15px; background-color: #f8fafc; border-radius: 6px; border: 1px solid #eef2f5; }
-    .system-status-container h5 { color: #1e3d59; font-size: 0.9rem; margin-bottom: 12px; font-weight: 600; }
+    .system-status-container h5 { color: #1E2A38; font-size: 0.9rem; margin-bottom: 12px; font-weight: 600; }
     .status-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.85rem; }
     .status-label { color: #7f8c8d; }
     .status-value { color: #2c3e50; font-weight: 500; }
-    .text-success { color: #17b978 !important; display: flex; align-items: center; gap: 5px; }
-    .text-blue { color: #1e3d59 !important; font-weight: bold; }
+    .text-success { color: #178978 !important; display: flex; align-items: center; gap: 5px; }
+    .text-blue { color: #1E2A38 !important; font-weight: bold; }
     .code-spec { background: #eef2f5; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.8rem; color: #e83e8c; }
     
     /* Chấm tròn nhấp nháy tạo hiệu ứng Live cho Docker */
-    .dot-online { width: 8px; height: 8px; background-color: #17b978; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #17b978; }
+    .dot-online { width: 8px; height: 8px; background-color: #178978; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #178978; }
 
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }

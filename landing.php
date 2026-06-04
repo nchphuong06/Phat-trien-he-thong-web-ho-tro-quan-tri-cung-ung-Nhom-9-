@@ -64,37 +64,36 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="shortcut icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowLink SCM - Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</title>
+    <title>Hệ thống Quản lý Kho hàng Thông minh - WMS Cloud</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #0f172a; /* Xanh đen Slate đậm đà, sang trọng */
-            --accent-color: #2563eb;  /* Xanh Royal tinh tế công nghệ */
+            --primary-color: #1E2A38; /* Primary Navy */
+            --accent-color: #178978;  /* Accent Emerald */
             --text-muted: #64748b;
-            --bg-light: #f8fafc;
+            --bg-light: #F4F6F9;
         }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            font-family: 'Roboto', sans-serif !important;
             color: #1e293b;
             overflow-x: hidden;
+            background-color: var(--bg-light);
         }
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e2e8f0;
+            background-color: var(--primary-color);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             transition: all 0.3s ease;
         }
         .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            background: linear-gradient(180deg, rgba(30,42,56,0.95) 0%, rgba(23,137,120,0.05) 100%);
             color: #ffffff;
-            padding: 140px 0 100px 0;
+            padding: 120px 0 80px 0;
             position: relative;
         }
         .hero-section::after {
@@ -107,17 +106,16 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         .btn-accent {
             background-color: var(--accent-color);
             color: white;
-            font-weight: 500;
+            font-weight: 600;
             padding: 10px 24px;
             border-radius: 8px;
             border: none;
-            transition: all 0.2s ease;
+            transition: all 0.18s ease;
         }
         .btn-accent:hover {
-            background-color: #1d4ed8;
-            color: white;
+            background-color: #149061;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 6px 18px rgba(23,137,120,0.12);
         }
         .feature-card {
             background: white;
@@ -134,7 +132,7 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         }
         .feature-icon {
             width: 50px; height: 50px;
-            background-color: rgba(37, 99, 235, 0.1);
+            background-color: rgba(23,137,120,0.08);
             color: var(--accent-color);
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
@@ -148,37 +146,47 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
             padding: 24px;
         }
         .cta-section {
-            background-color: #f1f5f9;
+            background-color: var(--bg-light);
             padding: 80px 0;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid rgba(30,42,56,0.04);
         }
         footer {
             background-color: var(--primary-color);
-            color: #94a3b8;
-            padding: 40px 0;
-            font-size: 0.9rem;
+            color: #cbd5da;
+            padding: 48px 0 28px 0;
+            font-size: 0.95rem;
         }
+        .footer-link { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .footer-small { color: rgba(255,255,255,0.7); }
+        .social-icon { color: white; opacity: 0.9; margin-left: 8px; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center fw-bold text-dark" href="#">
-                <i class="fa-solid fa-boxes-stacked me-2 text-primary"></i> WMS<span class="text-primary">CLOUD</span>
+            <a class="navbar-brand d-flex align-items-center fw-bold text-white" href="#" style="gap:10px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="2" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    <rect x="14" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    <rect x="2" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    <rect x="14" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                </svg>
+                <span style="font-size:1rem;">FlowLink <span style="color: #178978;">SCM</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center gap-2 mt-3 mt-lg-0">
-                    <li class="nav-item"><a class="nav-link px-3 text-dark" href="#features">Tính năng</a></li>
-                    <li class="nav-item"><a class="nav-link px-3 text-dark" href="#stats">Số liệu thực tế</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white" href="#features">Tính năng</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white" href="about.php">About us</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white" href="#stats">Số liệu thực tế</a></li>
                     <li class="nav-item ms-lg-2">
                         <?php if ($is_logged_in): ?>
                             <a class="btn btn-accent" href="index.php"><i class="fa-solid fa-chart-pie me-2"></i>Vào Dashboard</a>
                         <?php else: ?>
-                            <a class="btn btn-outline-dark me-2 px-3" href="index.php?action=login">Đăng nhập</a>
+                            <a class="btn btn-outline-light me-2 px-3" href="index.php?action=login">Đăng nhập</a>
                             <a class="btn btn-accent" href="index.php?action=register">Dùng thử ngay</a>
                         <?php endif; ?>
                     </li>
@@ -188,12 +196,11 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
     </nav>
 
     <section class="hero-section d-flex align-items-center">
-        <div class="container">
+        <div class="container-fluid px-4 px-md-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 mb-3 rounded-pill text-uppercase fw-semibold" style="background-color: rgba(37,99,235,0.15) !important;">Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</span>
-                    <h1 class="display-4 fw-bold lh-sm mb-3">FlowLink SCM</h1>
-                    <p class="lead opacity-75 mb-4">Nền tảng hỗ trợ quản trị chuỗi cung ứng và vận hành kho linh hoạt, giúp doanh nghiệp kết nối dữ liệu, điều phối hàng hóa và theo dõi tồn kho hiệu quả.</p>
+                    <span class="badge bg-primary-subtle text-white border border-primary-subtle px-3 py-2 mb-3 rounded-pill text-uppercase fw-semibold" style="background-color: rgba(23,137,120,0.10) !important; color: white !important;">Giải pháp vận hành kho 4.0</span>
+                    <h1 class="display-4 fw-bold lh-sm mb-3">FlowLink SCM: Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</h1>
                     <div class="d-flex flex-wrap gap-3">
                         <?php if ($is_logged_in): ?>
                             <a class="btn btn-accent btn-lg px-4 py-3 fs-6" href="index.php">Đến trung tâm quản lý <i class="fa-solid fa-arrow-right ms-2"></i></a>
@@ -217,11 +224,11 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
     </section>
 
     <section id="stats" class="py-5 bg-light">
-        <div class="container py-4">
+        <div class="container-fluid px-4 px-md-5 py-4">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center">
                     <h2 class="fw-bold">Hệ thống đang vận hành trực tuyến</h2>
-                    <p class="text-muted">Các chỉ số đo lường hiệu năng cốt lõi được cập nhật theo thời gian thực trực tiếp từ cơ sở dữ liệu hệ thống.</p>
+                    <p class="text-muted text-start text-md-start">Mọi biến động vật chất trong kho bãi đều được ghi nhận tự động và đồng bộ hóa tức thì. Các chỉ số đo lường hiệu năng cốt lõi dưới đây phản ánh chính xác tình trạng lưu trữ thực tế trực tiếp từ cơ sở dữ liệu hệ thống, giúp nhà quản trị đưa ra quyết định điều phối chính xác mà không cần qua các bước báo cáo thủ công.</p>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
@@ -236,7 +243,7 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-4">
-                    <div class="stat-card d-flex align-items-center justify-content-between" style="border-left-color: #10b981;">
+                    <div class="stat-card d-flex align-items-center justify-content-between" style="border-left-color: #178978;">
                         <div>
                             <span class="text-muted d-block text-uppercase small fw-semibold tracking-wider">Tổng sản lượng lưu kho</span>
                             <h3 class="display-6 fw-bold my-1 text-dark"><?php echo number_format($total_quantity); ?></h3>
@@ -250,46 +257,46 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
     </section>
 
     <section id="features" class="py-5">
-        <div class="container py-5">
+        <div class="container-fluid px-4 px-md-5 py-5">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center">
                     <span class="text-primary fw-bold text-uppercase small tracking-wide">Giải pháp toàn diện</span>
                     <h2 class="fw-bold mt-2">Các phân hệ nghiệp vụ tiêu chuẩn</h2>
-                    <p class="text-muted">Được module hóa kiến trúc giúp dễ dàng cấu hình linh hoạt theo đặc thù kho của từng doanh nghiệp.</p>
+                    <p class="text-muted text-start text-md-start">Được module hóa kiến trúc giúp dễ dàng cấu hình linh hoạt theo đặc thù kho của từng doanh nghiệp.</p>
                 </div>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fa-solid fa-boxes-packing"></i></div>
-                        <h5 class="fw-bold mb-3">Quản lý Sản phẩm & SKU</h5>
-                        <p class="text-muted mb-0">Thiết lập hồ sơ hàng hóa chi tiết: Quy cách đóng gói, giá vốn, mã vạch định danh và phân loại nhóm danh mục trực quan.</p>
-                    </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                            <h5 class="fw-bold mb-3">Quản lý Sản phẩm & SKU</h5>
+                            <p class="text-muted mb-0 text-start">Thiết lập hồ sơ hàng hóa chi tiết bao gồm quy cách đóng gói, giá vốn, mã vạch định danh và phân loại nhóm danh mục trực quan.</p>
+                        </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background-color: rgba(16,185,129,0.1); color: #10b981;"><i class="fa-solid fa-truck-ramp-box"></i></div>
-                        <h5 class="fw-bold mb-3">Điều phối Luân chuyển (Picking)</h5>
-                        <p class="text-muted mb-0">Hỗ trợ đầy đủ luồng dịch chuyển: Nhập kho (IN), Xuất kho (OUT) kế thừa chính xác dữ liệu từ các chứng từ mua bán.</p>
-                    </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background-color: rgba(23,137,120,0.08); color: #178978;"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                            <h5 class="fw-bold mb-3">Điều phối Luân chuyển (Picking)</h5>
+                            <p class="text-muted mb-0 text-start">Hỗ trợ đầy đủ luồng dịch chuyển từ Nhập kho đến Xuất kho, kế thừa chính xác dữ liệu từ các chứng từ mua bán.</p>
+                        </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background-color: rgba(245,158,11,0.1); color: #f59e0b;"><i class="fa-solid fa-bell"></i></div>
-                        <h5 class="fw-bold mb-3">Cảnh báo Ngưỡng an toàn</h5>
-                        <p class="text-muted mb-0">Hệ thống tự động rà soát, phát tín hiệu cảnh báo lập tức khi một mặt hàng rơi vào trạng thái sắp cạn kiệt (`lowStockAlert`).</p>
-                    </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background-color: rgba(255,59,48,0.06); color: #dc3545;"><i class="fa-solid fa-bell"></i></div>
+                            <h5 class="fw-bold mb-3">Cảnh báo Ngưỡng an toàn</h5>
+                            <p class="text-muted mb-0 text-start">Hệ thống tự động rà soát, phát tín hiệu cảnh báo lập tức khi một mặt hàng rơi vào trạng thái sắp cạn kiệt, giúp bộ phận mua hàng chủ động lên kế hoạch bổ sung hàng kịp thời, tối ưu hóa không gian lưu trữ.</p>
+                        </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section text-center">
-        <div class="container">
+    <section class="cta-section">
+        <div class="container-fluid px-4 px-md-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <h2 class="fw-bold mb-3">Sẵn sàng tối ưu hóa nhà kho của bạn?</h2>
-                    <p class="text-muted lead mb-4">Tham gia cùng hàng trăm doanh nghiệp Logistics đang vận hành kho một cách chính xác vượt trội.</p>
+                    <h2 class="fw-bold mb-3 text-center">Sẵn sàng tối ưu hóa nhà kho của bạn?</h2>
+                    <p class="text-muted lead mb-4 text-start">Hãy bắt đầu chuyển đổi số quy trình kho bãi ngay hôm nay để loại bỏ các thao tác ghi chép thủ công dễ sai sót. Tham gia cùng hàng trăm doanh nghiệp Logistics đang vận hành kho một cách chính xác vượt trội, tiết kiệm tối đa chi phí quản lý và nâng cao <span style="color: #dc3545; font-weight: bold;">200%</span> hiệu suất khai thác diện tích mặt bằng.</p>
                     <div>
                         <?php if ($is_logged_in): ?>
                             <a class="btn btn-accent btn-lg px-5 py-3 fs-6" href="index.php"><i class="fa-solid fa-chart-pie me-2"></i>Truy cập hệ thống ngay</a>
@@ -303,9 +310,45 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
     </section>
 
     <footer>
-        <div class="container text-center">
-            <p class="mb-2 fw-semibold text-white">FlowLink SCM</p>
-            <p class="mb-0 text-muted small">© <?php echo date('Y'); ?> Dự án FlowLink SCM. Phát triển dựa trên nền tảng PHP thuần & Bootstrap 5.</p>
+        <div class="container">
+            <div class="row mb-4 align-items-start">
+                <div class="col-12 d-flex align-items-center mb-3">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right:12px;">
+                        <rect x="2" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                        <rect x="14" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                        <rect x="2" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                        <rect x="14" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    </svg>
+                    <div>
+                        <div style="font-weight:700; color: white; font-size:1.05rem;">FlowLink <span style="color: #17B978;">SCM</span></div>
+                        <div class="footer-small">Kết nối dữ liệu — Điều phối thông minh — Tối ưu vận hành</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white fw-bold">GIẢI PHÁP (Mô-đun)</h6>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><span class="footer-small">Quản lý kho hàng (WMS)</span></li>
+                        <li class="mb-2"><span class="footer-small">Điều phối dịch chuyển</span></li>
+                        <li class="mb-2"><span class="footer-small">Kiểm kê & Đối soát</span></li>
+                        <li class="mb-2"><span class="footer-small">Báo cáo vĩ mô</span></li>
+                        <li class="mb-2"><span class="footer-small">Trợ lý AI Cố vấn</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white fw-bold">GIỚI THIỆU CÔNG TY</h6>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a class="footer-link" href="about.php">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white fw-bold">KHUNG THÔNG TIN ĐỊNH DANH</h6>
+                    <p class="footer-small mt-3">FlowLink SCM là hệ thống quản trị chuỗi cung ứng và vận hành linh hoạt, giúp kết nối dữ liệu, tối ưu quy trình và nâng cao hiệu quả điều phối cho mọi quy mô doanh nghiệp.</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center footer-small">© <?php echo date('Y'); ?> FlowLink SCM. All rights reserved.</div>
+            </div>
         </div>
     </footer>
 
