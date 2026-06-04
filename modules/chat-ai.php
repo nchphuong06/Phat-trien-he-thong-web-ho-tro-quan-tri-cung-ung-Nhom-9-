@@ -111,15 +111,12 @@ $(document).ready(function() {
         $('#chat-box').append('<div id="' + loadingId + '" class="msg-group msg-ai"><div class="msg-label">Hệ Thống Trợ Lý</div><div class="msg-content" style="color: #7f8c8d; font-style: italic;">Đang xử lý truy vấn...</div></div>');
         $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
 
-        let apiKey = 'AIzaSyAV7o_6as4jgcq9pkB0qJed3mGWdM7pGB4'; 
-        let apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + apiKey;
-
         $.ajax({
-            url: apiUrl,
+            url: 'modules/gemini-handler.php',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
-                "contents": [{"parts":[{"text": text}]}]
+                text: text
             }),
             success: function(response) {
                 $('#' + loadingId).remove();
