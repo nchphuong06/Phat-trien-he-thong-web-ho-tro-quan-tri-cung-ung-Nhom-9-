@@ -86,11 +86,189 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         }
         .about-text {
             font-family: 'Roboto', sans-serif;
-            color: #1E2A38;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            color: #334155;
+            font-size: 1.08rem;
+            line-height: 1.9;
             text-align: left;
         }
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        /* ===== ABOUT PAGE - EMERALD GRADIENT THEME ===== */
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+        /* Thanh navbar */
+        .navbar,
+        .site-header,
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%) !important;
+            border-bottom: 1px solid rgba(167, 243, 208, 0.18);
+        }
+        /* Hero About Us */
+        .about-hero,
+        .hero,
+        .page-hero,
+        .about-header {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(5, 150, 105, 0.28), transparent 32%),
+                linear-gradient(135deg, #022c22 0%, #064e3b 38%, #059669 72%, #a7f3d0 100%) !important;
+            color: #ffffff !important;
+        }
+        /* Tiêu đề hero */
+        .about-hero h1,
+        .hero h1,
+        .page-hero h1,
+        .about-header h1 {
+            color: #ffffff !important;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+        /* Mô tả hero */
+        .about-hero p,
+        .hero p,
+        .page-hero p,
+        .about-header p {
+            color: rgba(255, 255, 255, 0.88) !important;
+        }
+        /* Khung bên phải trong hero */
+        .about-hero .card,
+        .hero .card,
+        .page-hero .card,
+        .about-header .card {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1px solid rgba(209, 250, 229, 0.35) !important;
+            box-shadow: 0 24px 60px rgba(2, 44, 34, 0.22);
+            backdrop-filter: blur(14px);
+            color: #ffffff !important;
+        }
+        /* Link active và điểm nhấn emerald */
+        .navbar a:hover,
+        .site-header a:hover,
+        header a:hover,
+        .text-emerald,
+        .brand span,
+        .logo span {
+            color: #34d399 !important;
+        }
+        /* Nút dùng thử ngay */
+        .btn-primary,
+        .btn-accent,
+        .btn-success {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+            border-color: #059669 !important;
+            color: #ffffff !important;
+            box-shadow: 0 12px 28px rgba(5, 150, 105, 0.28);
+        }
+        .btn-primary:hover,
+        .btn-accent:hover,
+        .btn-success:hover {
+            background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+            border-color: #047857 !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+        /* Nút đăng nhập dạng viền */
+        .btn-outline-light,
+        .btn-outline-primary {
+            border-color: rgba(167, 243, 208, 0.7) !important;
+            color: #ffffff !important;
+        }
+        .btn-outline-light:hover,
+        .btn-outline-primary:hover {
+            background: rgba(16, 185, 129, 0.16) !important;
+            border-color: #34d399 !important;
+        }
+        /* Phần nội dung giới thiệu */
+        .about-content,
+        .about-section,
+        main section {
+            background: #ffffff;
+        }
+        .about-content p,
+        .about-section p,
+        main section p {
+            color: #334155;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+        /* Footer đồng bộ màu */
+        footer,
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #022c22 100%) !important;
+            color: #e2e8f0 !important;
+            border-top: 1px solid rgba(167, 243, 208, 0.16);
+        }
+        footer h5,
+        footer h6,
+        .footer h5,
+        .footer h6 {
+            color: #ffffff !important;
+        }
+        footer a,
+        .footer a {
+            color: #cbd5e1 !important;
+        }
+        footer a:hover,
+        .footer a:hover {
+            color: #34d399 !important;
+        }
+        .about-feature-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-feature-card {
+    background: #ffffff;
+    border: 1px solid rgba(16, 185, 129, 0.18);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+    transition: all 0.22s ease;
+}
+
+.about-feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 54px rgba(15, 23, 42, 0.12);
+    border-color: rgba(16, 185, 129, 0.38);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.about-feature-card h3 {
+    color: #064e3b;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.about-feature-card p {
+    color: #475569;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -152,9 +330,46 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <p class="about-text">
-                        FlowLink SCM là hệ thống quản trị chuỗi cung ứng và điều phối vận hành kho bãi toàn diện. Chúng tôi mang đến giải pháp chuyển đổi số mạnh mẽ, giúp tối ưu hóa 200% hiệu suất khai thác mặt bằng, tự động hóa luồng luân chuyển hàng hóa (Picking) từ chứng từ thực tế, và thiết lập hệ thống cảnh báo ngưỡng an toàn thông minh. Với tư duy thiết kế tối giản và tập trung, FlowLink SCM loại bỏ hoàn toàn các thao tác thủ công phức tạp, giúp doanh nghiệp kiểm soát chính xác mọi biến động vật chất trong kho theo thời gian thực.
-                    </p>
+                    <div class="about-text">
+                        <p>
+                            FlowLink SCM là nền tảng quản trị chuỗi cung ứng và vận hành kho được thiết kế cho doanh nghiệp hiện đại.
+                            Hệ thống giúp kết nối dữ liệu giữa sản phẩm, đối tác, kho hàng, kiểm kho và báo cáo trong cùng một quy trình thống nhất.
+                            Thay vì quản lý thủ công bằng nhiều file rời rạc, FlowLink SCM hỗ trợ doanh nghiệp theo dõi tồn kho, luân chuyển hàng hóa và biến động vận hành theo thời gian thực.
+                        </p>
+                        <p>
+                        Các nghiệp vụ như nhập kho, xuất kho, kiểm kê, cảnh báo tồn kho thấp và tổng hợp báo cáo được tổ chức rõ ràng, dễ thao tác và dễ kiểm soát.
+                        Với giao diện trực quan, người dùng có thể nhanh chóng nắm bắt tình trạng kho, lịch sử giao dịch và hiệu suất vận hành chỉ trong vài thao tác.
+                        FlowLink SCM không chỉ giúp giảm sai sót trong quá trình quản lý mà còn hỗ trợ ra quyết định dựa trên dữ liệu thực tế.
+                        </p>
+                        <p>
+                        Đối với doanh nghiệp logistics, bán lẻ hoặc sản xuất, hệ thống đóng vai trò như một trung tâm điều phối giúp tối ưu dòng hàng, dòng thông tin và nguồn lực vận hành.
+                        Mục tiêu của FlowLink SCM là tạo ra một giải pháp quản trị tinh gọn, linh hoạt và dễ mở rộng theo nhu cầu thực tế của từng doanh nghiệp.
+                        Thông qua việc số hóa quy trình kho và chuỗi cung ứng, FlowLink SCM góp phần nâng cao hiệu suất, tiết kiệm thời gian và tăng tính minh bạch trong toàn bộ hoạt động vận hành.
+                        </p>
+                    </div>
+                    <div class="about-feature-grid">
+                        <div class="about-feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                            </div>
+                            <h3>Quản lý kho tập trung</h3>
+                            <p>Theo dõi sản phẩm, tồn kho và lịch sử nhập xuất trong cùng một hệ thống thống nhất.</p>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <h3>Vận hành theo thời gian thực</h3>
+                            <p>Cập nhật biến động kho nhanh chóng, giúp doanh nghiệp kiểm soát dữ liệu chính xác hơn.</p>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3>Báo cáo trực quan</h3>
+                            <p>Tổng hợp số liệu tồn kho, cảnh báo ngưỡng và hỗ trợ ra quyết định vận hành.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
