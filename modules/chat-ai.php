@@ -115,15 +115,30 @@ $(document).ready(function() {
             url: 'modules/gemini-handler.php',
             type: 'POST',
             contentType: 'application/json',
+            dataType: 'json',
             data: JSON.stringify({
                 text: text
             }),
             success: function(response) {
                 $('#' + loadingId).remove();
-                let aiReply = response.candidates[0].content.parts[0].text;
+                let aiReply = 'Xin lỗi, hệ thống chưa nhận được phản hồi hợp lệ từ AI.';
+                if (
+                    response.candidates &&
+                    response.candidates[0] &&
+                    response.candidates[0].content &&
+                    response.candidates[0].content.parts &&
+                    response.candidates[0].content.parts[0] &&
+                    response.candidates[0].content.parts[0].text
+                ) {
+                    aiReply = response.candidates[0].content.parts[0].text;
+                }
                 aiReply = aiReply.replace(/\n/g, '<br>');
-                
-                $('#chat-box').append('<div class="msg-group msg-ai"><div class="msg-label">Hệ Thống Trợ Lý</div><div class="msg-content">' + aiReply + '</div></div>');
+                $('#chat-box').append(
+                    '<div class="msg-group msg-ai">' +
+                        '<div class="msg-label">Hệ Thống Trợ Lý</div>' +
+                        '<div class="msg-content">' + aiReply + '</div>' +
+                    '</div>'
+                );
                 $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
             },
             error: function(xhr) {
