@@ -159,6 +159,63 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         .footer-link { color: rgba(255,255,255,0.9); text-decoration: none; }
         .footer-small { color: rgba(255,255,255,0.7); }
         .social-icon { color: white; opacity: 0.9; margin-left: 8px; }
+        
+        /* ===== FLOWLINK SCM - EMERALD GRADIENT HERO ===== */
+        .hero, .hero-section, .landing-hero {background:
+            radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 28%),
+            radial-gradient(circle at 85% 15%, rgba(5, 150, 105, 0.28), transparent 32%),
+            linear-gradient(135deg, #022c22 0%, #064e3b 35%, #059669 70%, #a7f3d0 100%) !important;
+        }
+        .hero::before,
+        .hero-section::before,
+        .landing-hero::before {
+            background: linear-gradient(
+                135deg,
+                rgba(2, 44, 34, 0.78),
+                rgba(6, 78, 59, 0.58),
+                rgba(16, 185, 129, 0.18)
+            ) !important;
+        }
+        
+        /* Badge: GIẢI PHÁP VẬN HÀNH KHO 4.0 */
+        .hero .badge,
+        .hero-section .badge,
+        .landing-hero .badge {
+            background: rgba(236, 253, 245, 0.12) !important;
+            color: #ecfdf5 !important;
+            border: 1px solid rgba(167, 243, 208, 0.55) !important;
+        }
+
+       /* Button "Bắt đầu trải nghiệm miễn phí" đổi sang Navy */
+        .hero .btn-primary,
+        .hero-section .btn-primary,
+        .landing-hero .btn-primary,
+        .hero .btn-cta,
+        .hero-section .btn-cta,
+        .landing-hero .btn-cta,
+        .hero a.btn:first-of-type,
+        .hero-section a.btn:first-of-type,
+        .landing-hero a.btn:first-of-type {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border-color: #0f172a !important;
+            color: #ffffff !important;
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.28) !important;
+        }
+
+         /* Hover cho button Navy */
+        .hero .btn-primary:hover,
+        .hero-section .btn-primary:hover,
+        .landing-hero .btn-primary:hover,
+        .hero .btn-cta:hover,
+        .hero-section .btn-cta:hover,
+        .landing-hero .btn-cta:hover,
+        .hero a.btn:first-of-type:hover,
+        .hero-section a.btn:first-of-type:hover,
+        .landing-hero a.btn:first-of-type:hover {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.36) !important;
+        }
     </style>
 </head>
 <body>
