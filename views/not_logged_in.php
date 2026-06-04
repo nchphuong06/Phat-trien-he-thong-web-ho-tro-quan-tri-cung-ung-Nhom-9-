@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập - FlowLink SCM</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: linear-gradient(135deg, #1e3d59 0%, #17b978 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
-        .login-container { background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; max-width: 450px; width: 100%; animation: slideIn 0.5s ease-out; position: relative; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background: linear-gradient(180deg, #1E2A38 0%, #178978 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }        .login-container { background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; max-width: 450px; width: 100%; animation: slideIn 0.5s ease-out; position: relative; }
         @keyframes slideIn { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        .login-header { background: linear-gradient(135deg, #1e3d59 0%, #2b5278 100%); padding: 40px 30px; text-align: center; color: #ffffff; }
-        .login-header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+        .login-header { background: #178978; padding: 40px 30px; text-align: center; color: #ffffff; }
+        .login-header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; display:flex; align-items:center; justify-content:center; gap:10px; }
         .login-body { padding: 30px 30px; }
         .message-box { padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem; }
         .error-box { background-color: #fee; color: #c33; border-left: 4px solid #e74c3c; }
-        .success-box { background-color: #d4edda; color: #155724; border-left: 4px solid #17b978; }
+        .success-box { background-color: #d4edda; color: #155724; border-left: 4px solid #178978; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; color: #1e3d59; font-weight: 600; font-size: 0.9rem; }
         .login_input { width: 100%; padding: 14px 16px; border: 2px solid #e0e6ed; border-radius: 8px; font-size: 1rem; background-color: #f8fafc; transition: all 0.3s ease; }
-        .login_input:focus { outline: none; border-color: #17b978; background-color: #ffffff; }
-        .btn-login { width: 100%; padding: 14px; background: linear-gradient(135deg, #1e3d59 0%, #17b978 100%); color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .login_input:focus { outline: none; border-color: #178978; background-color: #ffffff; }
+        .btn-login { width: 100%; padding: 14px; background: #1E2A38; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
         .social-divider { display: flex; align-items: center; text-align: center; margin: 25px 0; color: #8898aa; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
         .social-divider::before, .social-divider::after { content: ''; flex: 1; border-bottom: 1px solid #e0e6ed; }
         .social-divider:not(:empty)::before { margin-right: .75em; }
         .social-divider:not(:empty)::after { margin-left: .75em; }
         .register-link { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #64748b; }
-        .register-link a { color: #17b978; font-weight: 600; text-decoration: none; cursor: pointer; }
+        .register-link a { color: #178978; font-weight: 600; text-decoration: none; cursor: pointer; }
         .google-action { display: flex; justify-content: center; margin-top: 12px; }
         .google-note { text-align: center; margin-top: 12px; font-size: 0.9rem; color: #5b6b77; }
         .google-signin-card { width: 100%; max-width: 420px; }
@@ -41,8 +41,16 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1>FlowLink SCM</h1>
-            <p>Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</p>
+            <h1>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="2" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    <rect x="14" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    <rect x="2" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                    <rect x="14" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                </svg>
+                <span style="font-size:1rem;">FlowLink <span style="color:#178978;">SCM</span></span>
+            </h1>
+            <p>Đăng nhập điều hành hệ thống logistics</p>
         </div>
 
         <div class="login-body">
@@ -100,7 +108,7 @@
             <div class="google-note">Đăng nhập tức thì bằng Google, bảo mật và không cần nhập mật khẩu nếu bạn đã đăng nhập Google.</div>
 
             <div class="register-link">
-                Chưa có tài khoản FlowLink SCM? <a onclick="openRegisterModal()">Đăng ký tài khoản mới</a>
+                Chưa có tài khoản quản lý kho? <a onclick="openRegisterModal()">Đăng ký tài khoản mới</a>
             </div>
         </div>
     </div>
@@ -129,7 +137,7 @@
                         <label>Nhập lại mật khẩu</label>
                         <input class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required placeholder="••••••••" autocomplete="off" />
                     </div>
-                    <button type="submit" name="register" class="btn-login" style="background: linear-gradient(135deg, #17b978 0%, #1e3d59 100%);">Xác nhận đăng ký</button>
+                    <button type="submit" name="register" class="btn-login" style="background: linear-gradient(135deg, #178978 0%, #1E2A38 100%);">Xác nhận đăng ký</button>
                     
                     <div class="register-link" style="margin-top: 15px;">
                         <a onclick="closeRegisterModal()" style="color: #e74c3c;">Quay lại Đăng nhập</a>

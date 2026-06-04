@@ -150,53 +150,52 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="shortcut icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowLink SCM</title>
+    <title>Hệ Thống Quản Lý Kho Chuẩn Odoo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { display: flex; background-color: #f4f6f9; min-height: 100vh; color: #333333; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+        body { display: flex; background-color: #F4F6F9; min-height: 100vh; color: #333333; }
         
-        .sidebar { width: 260px; background-color: #1e3d59; color: #ffffff; display: flex; flex-direction: column; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
-        .sidebar-brand { padding: 20px; text-align: center; font-size: 1.15rem; font-weight: bold; border-bottom: 1px solid #17b978; background-color: #17b978; color: #ffffff; letter-spacing: 0.5px; }
+        .sidebar { width: 260px; background-color: #178978; color: #ffffff; display: flex; flex-direction: column; box-shadow: 2px 0 8px rgba(0,0,0,0.06); }
+        .sidebar-brand { padding: 18px 16px; text-align: left; font-size: 1.05rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.04); background-color: transparent; color: #ffffff; letter-spacing: 0.2px; display:flex; align-items:center; gap:10px; }
         .sidebar-menu { list-style: none; padding: 15px 0; flex: 1; }
         .sidebar-menu li { padding: 14px 20px; transition: all 0.2s ease-in-out; }
-        .sidebar-menu li:hover { background-color: #17b978; padding-left: 25px; }
-        .sidebar-menu a { color: #e8f1f5; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; font-weight: 500; }
+        .sidebar-menu li:hover { background-color: rgba(23,137,120,0.06); padding-left: 22px; }
+        .sidebar-menu a { color: rgba(255,255,255,0.92); text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; font-weight: 600; }
         .sidebar-menu li:hover a { color: #ffffff; }
         
-        .sidebar-logout { padding: 20px; border-top: 1px solid #2b5278; }
-        .btn-logout { display: block; text-align: center; background-color: #ff6b6b; color: white; padding: 10px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; }
-        .btn-logout:hover { background-color: #ee5253; }
+        .sidebar-logout { padding: 18px; border-top: 1px solid rgba(255,255,255,0.04); }
+        .btn-logout { display: block; text-align: center; background-color: transparent; color: rgba(255,255,255,0.95); padding: 10px; text-decoration: none; border-radius: 6px; font-weight: 700; transition: all 0.18s; border: 1px solid rgba(255,255,255,0.06); }
+        .btn-logout:hover { background-color: rgba(255,255,255,0.03); transform: translateY(-1px); }
 
         .main-content { flex: 1; display: flex; flex-direction: column; }
-        .main-header { height: 65px; background-color: #ffffff; display: flex; align-items: center; justify-content: space-between; padding: 0 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-bottom: 1px solid #eef2f5; }
-        .page-title { font-size: 1.1rem; font-weight: 600; color: #1e3d59; display: flex; align-items: center; gap: 8px; }
+        .main-header { height: 65px; background-color: #ffffff; display: flex; align-items: center; justify-content: space-between; padding: 0 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-bottom: 1px solid rgba(30,42,56,0.04); }
+        .page-title { font-size: 1.1rem; font-weight: 600; color: #1E2A38; display: flex; align-items: center; gap: 8px; }
         
         /* 👤 AVATAR PROFILE DESIGN */
         .user-profile { display: flex; align-items: center; gap: 12px; cursor: pointer; position: relative; }
         .user-info { text-align: right; }
         .user-info .username { display: block; font-size: 0.9rem; font-weight: 600; color: #2c3e50; }
         .user-info .role { display: block; font-size: 0.75rem; color: #7f8c8d; }
-        .avatar-circle { width: 38px; height: 38px; background-color: #17b978; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; box-shadow: 0 2px 4px rgba(23, 185, 120, 0.2); border: 2px solid #ffffff; }
+        .avatar-circle { width: 38px; height: 38px; background-color: #178978; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; box-shadow: 0 2px 4px rgba(23, 137, 120, 0.2); border: 2px solid #ffffff; }
 
-        .main-body { padding: 30px; flex: 1; overflow-y: auto; background-color: #f8fafc; }
+        .main-body { padding: 30px; flex: 1; overflow-y: auto; background-color: #F4F6F9; }
 
         /* 🛠️ COMPONENT: TRUNG TÂM ĐIỀU KHIỂN ĐA PHÂN HỆ PRO */
         .profile-dropdown { display: none; position: absolute; right: 0; top: 55px; background-color: #ffffff; min-width: 350px; box-shadow: 0px 15px 35px rgba(30, 61, 89, 0.18); border-radius: 12px; padding: 0; z-index: 9999; border: 1px solid #e2e8f0; cursor: default; text-align: left; overflow: hidden; }
         .profile-dropdown.show { display: block; animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
         
         /* Dropdown Header */
-        .pro-dropdown-header { background: linear-gradient(135deg, #1e3d59 0%, #17b978 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px; }
+        .pro-dropdown-header { background: linear-gradient(135deg, #1E2A38 0%, #178978 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px; }
         .pro-dropdown-header h4 { font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
         .pro-badge { background: rgba(255, 255, 255, 0.22); padding: 2px 8px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.3); }
 
         /* Navigation Tabs Control */
         .profile-tabs-nav { display: flex; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
         .profile-tab-btn { flex: 1; text-align: center; padding: 10px; font-size: 0.85rem; font-weight: 600; color: #64748b; background: none; border: none; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
-        .profile-tab-btn.active { color: #1e3d59; border-bottom-color: #1e3d59; background: #ffffff; }
+        .profile-tab-btn.active { color: #1E2A38; border-bottom-color: #1E2A38; background: #ffffff; }
 
         /* Tabs Content Layer */
         .profile-tab-content { padding: 20px; display: none; max-height: 420px; overflow-y: auto; }
@@ -206,17 +205,17 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
         .kpi-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
         .kpi-mini-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; }
         .kpi-mini-card p { font-size: 0.75rem; color: #64748b; font-weight: 500; margin-bottom: 4px; }
-        .kpi-mini-card h5 { font-size: 1.25rem; color: #1e3d59; font-weight: 700; }
+        .kpi-mini-card h5 { font-size: 1.25rem; color: #1E2A38; font-weight: 700; }
         
         .sys-info-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dotted #e2e8f0; font-size: 0.8rem; color: #475569; }
-        .sys-info-item strong { color: #1e3d59; }
+        .sys-info-item strong { color: #1E2A38; }
 
         /* Form styling */
         .form-mini-group { margin-bottom: 12px; }
         .form-mini-group label { display: block; font-size: 0.78rem; margin-bottom: 5px; color: #475569; font-weight: 600; }
         .form-mini-group label span { color: #ff6b6b; }
         .form-mini-group input { width: 100%; padding: 8px 12px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; outline: none; color: #1e293b; transition: all 0.15s; }
-        .form-mini-group input:focus { border-color: #17b978; box-shadow: 0 0 0 3px rgba(23, 185, 120, 0.15); }
+        .form-mini-group input:focus { border-color: #178978; box-shadow: 0 0 0 3px rgba(23, 137, 120, 0.15); }
         
         /* STYLE CHO KHỐI ĐỔI MẬT KHẨU ẨN HIỆN LINH HOẠT */
         .btn-trigger-password { display: block; width: 100%; background: #f1f5f9; color: #475569; border: 1px dashed #cbd5e1; padding: 8px; text-align: center; font-size: 0.8rem; font-weight: 600; border-radius: 6px; cursor: pointer; margin: 10px 0; transition: all 0.2s; }
@@ -225,10 +224,12 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
         .password-toggle-section.show { display: block; }
 
         .dropdown-mini-actions { display: flex; justify-content: space-between; margin-top: 18px; gap: 10px; }
-        .btn-mini-save { background-color: #17b978; color: white; border: none; padding: 9px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; flex: 1; box-shadow: 0 2px 4px rgba(23, 185, 120, 0.15); }
+        .btn-mini-save { background-color: #178978; color: white; border: none; padding: 9px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; flex: 1; box-shadow: 0 2px 4px rgba(23, 137, 120, 0.15); }
         .btn-mini-save:hover { background-color: #14a066; }
         .btn-mini-cancel { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 9px 14px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 0.85rem; text-align: center; flex: 1; }
         .btn-mini-cancel:hover { background-color: #e2e8f0; }
+        .btn-logout-dropdown { background-color: #dc3545 !important; color: white !important; border: none !important; padding: 10px !important; text-decoration: none; border-radius: 6px; font-weight: 700; display: block; text-align: center; transition: all 0.18s; }
+        .btn-logout-dropdown:hover { background-color: #c82333 !important; transform: translateY(-1px); box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2); }
         @keyframes dropdownFadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -236,8 +237,16 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
 
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <img src="logo.png" alt="FlowLink SCM Logo" style="width: 38px; height: 38px; object-fit: contain; margin-right: 8px;">
-            <span>FlowLink SCM</span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="2" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                <rect x="14" y="2" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                <rect x="2" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+                <rect x="14" y="14" width="8" height="8" stroke="white" stroke-width="1.2" fill="none" rx="1" />
+            </svg>
+            <div style="margin-left:6px; line-height:1;">
+                <div style="font-weight:700;">FlowLink <span style="color:#178978;">SCM</span></div>
+                <div style="font-size:0.75rem; color: rgba(255,255,255,0.75);">Hệ thống SCM</div>
+            </div>
         </div>
         <ul class="sidebar-menu">
             <li><a href="index.php?page=dashboard">📊 Dashboard</a></li>
@@ -249,14 +258,11 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
             <li><a href="index.php?page=chat-ai">🤖 Trợ lý AI</a></li>
             <li><a href="index.php?page=settings">⚙️ Cài đặt</a></li>
         </ul>
-        <div class="sidebar-logout">
-            <a href="index.php?logout" class="btn-logout">🚪 Đăng xuất</a>
-        </div>
     </aside>
 
     <div class="main-content">
         <header class="main-header">
-            <div class="page-title">Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</div>
+            <div class="page-title">⚙️ Hệ thống điều phối dữ liệu</div>
             
             <div class="user-profile" id="userProfileTrigger">
                 <div class="user-info">
@@ -270,7 +276,7 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
                 <div class="profile-dropdown" id="profileDropdownMini">
                     
                     <div class="pro-dropdown-header">
-                        <div class="avatar-circle" style="background: white; color: #1e3d59; box-shadow: none;">
+                        <div class="avatar-circle" style="background: white; color: #1E2A38; box-shadow: none;">
                             <?php echo strtoupper(substr($_SESSION['user_name'] ?? 'Q', 0, 1)); ?>
                         </div>
                         <div>
@@ -299,7 +305,7 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
                         <div class="sys-info-item"><span>Họ và tên:</span> <strong><?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Chưa cấu hình'); ?></strong></div>
                         <div class="sys-info-item"><span>Email đăng ký:</span> <strong><?php echo htmlspecialchars($_SESSION['user_email'] ?? 'Chưa cấu hình'); ?></strong></div>
                         <div class="sys-info-item"><span>Số điện thoại:</span> <strong><?php echo htmlspecialchars($_SESSION['user_phone'] ?? 'Chưa cập nhật'); ?></strong></div>
-                        <div class="sys-info-item"><span>Môi trường mạng:</span> <strong style="color: #17b978;">Docker Container Stack</strong></div>
+                        <div class="sys-info-item"><span>Môi trường mạng:</span> <strong style="color: #178978;">Docker Container Stack</strong></div>
                         <button type="button" id="btnMiniClose" class="btn-mini-cancel" style="margin-top: 15px; width: 100%;">Đóng bảng điều khiển</button>
                     </div>
 
@@ -346,6 +352,10 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
                         </form>
                     </div>
 
+                    <div class="dropdown-mini-actions" style="padding: 0 15px 15px 15px;">
+                        <a href="index.php?logout" class="btn-logout-dropdown">🚪 Đăng xuất</a>
+                    </div>
+
                 </div>
             </div>
         </header>
@@ -360,8 +370,8 @@ if (!isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
                 if (file_exists($targetFile)) {
                     include($targetFile);
                 } else {
-                    echo "<div style='background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-left: 4px solid #1e3d59;'>";
-                    echo "<h3 style='color: #1e3d59;'>Mô-đun [ " . htmlspecialchars(ucfirst($currentPage)) . " ] đang được cấu trúc</h3>";
+                    echo "<div style='background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-left: 4px solid #1E2A38;'>";
+                    echo "<h3 style='color: #1E2A38;'>Mô-đun [ " . htmlspecialchars(ucfirst($currentPage)) . " ] đang được cấu trúc</h3>";
                     echo "<p style='color: #7f8c8d; margin-top: 10px;'>Hạt nhân Docker đang sẵn sàng nạp kết nối SQL cho tầng nghiệp vụ này.</p>";
                     echo "</div>";
                 }

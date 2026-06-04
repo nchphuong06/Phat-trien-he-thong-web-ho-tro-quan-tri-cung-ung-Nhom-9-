@@ -77,7 +77,7 @@ if (isset($_POST['submit_update_profile'])) {
     <title>Hệ Thống Quản Lý Kho Chuẩn Odoo</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
         body { display: flex; background-color: #f4f6f9; min-height: 100vh; color: #333333; }
         
         /* 🔵 THANH SIDEBAR BÊN TRÁI - TÔNG XANH NƯỚC BIỂN ĐẬM */

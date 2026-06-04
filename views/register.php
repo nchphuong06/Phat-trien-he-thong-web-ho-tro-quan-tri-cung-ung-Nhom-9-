@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký tài khoản - FlowLink SCM</title>
+    <title>Đăng ký tài khoản - Hệ thống Quản Lý Kho</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
         body { background: linear-gradient(135deg, #1e3d59 0%, #17b978 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
         .login-container { background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; max-width: 480px; width: 100%; animation: slideIn 0.5s ease-out; }
         @keyframes slideIn { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        .login-header { background: linear-gradient(135deg, #1e3d59 0%, #2b5278 100%); padding: 30px 20px; text-align: center; color: #ffffff; }
+        .login-header { background: #178978; padding: 30px 20px; text-align: center; color: #ffffff; }
         .login-header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
         .login-body { padding: 25px 30px; }
         .message-box { padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem; }
@@ -21,7 +21,7 @@
         .form-group label { display: block; margin-bottom: 6px; color: #1e3d59; font-weight: 600; font-size: 0.9rem; }
         .login_input { width: 100%; padding: 12px 14px; border: 2px solid #e0e6ed; border-radius: 8px; font-size: 0.95rem; background-color: #f8fafc; transition: all 0.3s ease; }
         .login_input:focus { outline: none; border-color: #17b978; background-color: #ffffff; }
-        .btn-register { width: 100%; padding: 14px; background: linear-gradient(135deg, #1e3d59 0%, #17b978 100%); color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-register { width: 100%; padding: 14px; background: #1E2A38; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
         .login-link { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #64748b; }
         .login-link a { color: #17b978; font-weight: 600; text-decoration: none; }
         .social-divider { display: flex; align-items: center; text-align: center; margin: 20px 0; color: #8898aa; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
@@ -37,8 +37,8 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1 id="header-title">Đăng ký tài khoản FlowLink SCM</h1>
-            <p id="header-desc">Liên kết chuỗi cung ứng, linh hoạt mọi vận hành</p>
+            <h1 id="header-title">Đăng ký tài khoản Kho</h1>
+            <p id="header-desc">Hệ thống quản lý chuỗi cung ứng logistics</p>
         </div>
 
         <div class="login-body">
@@ -168,7 +168,7 @@
     </script>
 
     <div class="footer-text" style="text-align: center; margin-top: 15px; color: #e8f1f5; font-size: 0.85rem;">
-        © 2026 FlowLink SCM - Powered by Google OAuth 2.0 Identity Server
+        © 2026 Warehouse Management System - Powered by Google OAuth 2.0 Identity Server
     </div>
 </body>
 </html>

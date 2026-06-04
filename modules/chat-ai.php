@@ -9,7 +9,7 @@
         height: 75vh; 
     }
     .ai-chat-header {
-        background-color: #1e3d59;
+        background-color: #1E2A38;
         color: #ffffff;
         padding: 15px 25px;
         font-weight: 600;
@@ -33,7 +33,7 @@
     .msg-ai { align-self: flex-start; }
     .msg-label { font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; }
     .msg-user .msg-label { text-align: right; color: #7f8c8d; }
-    .msg-ai .msg-label { text-align: left; color: #17b978; }
+    .msg-ai .msg-label { text-align: left; color: #178978; }
     .msg-content { padding: 12px 18px; border-radius: 4px; line-height: 1.5; font-size: 0.95rem; }
     .msg-user .msg-content { background-color: #e8f1f5; border: 1px solid #dcdde1; color: #2c3e50; }
     .msg-ai .msg-content { background-color: #ffffff; border: 1px solid #eef2f5; box-shadow: 0 2px 5px rgba(0,0,0,0.02); color: #333333; }
@@ -56,13 +56,13 @@
         transition: border-color 0.2s;
     }
     .ai-chat-footer input:focus {
-        border-color: #17b978;
+        border-color: #178978;
     }
     .ai-chat-footer button {
         padding: 0 40px;
-        background-color: #1e3d59;
+        background-color: #1E2A38;
         color: white;
-        border: 1px solid #1e3d59;
+        border: 1px solid #1E2A38;
         border-radius: 0 4px 4px 0;
         cursor: pointer;
         font-weight: bold;
@@ -70,8 +70,8 @@
         transition: background-color 0.2s;
     }
     .ai-chat-footer button:hover {
-        background-color: #17b978;
-        border-color: #17b978;
+        background-color: #178978;
+        border-color: #178978;
     }
 </style>
 
