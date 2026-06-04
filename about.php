@@ -409,6 +409,26 @@ footer a:hover,
 .footer a:hover {
     color: #34d399 !important;
 }
+        /* ===== FIX ABOUT HERO TITLE VISIBILITY ===== */
+.hero-section::before {
+    z-index: 0 !important;
+}
+
+.hero-section .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.hero-section h1 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    font-weight: 850 !important;
+    letter-spacing: -0.045em;
+    text-shadow:
+        0 4px 18px rgba(2, 44, 34, 0.38),
+        0 14px 42px rgba(2, 44, 34, 0.28) !important;
+}
+
     </style>
 </head>
 <body>
