@@ -129,9 +129,25 @@ $(document).ready(function() {
                 $('#chat-box').append('<div class="msg-group msg-ai"><div class="msg-label">Hệ Thống Trợ Lý</div><div class="msg-content">' + aiReply + '</div></div>');
                 $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
             },
-            error: function() {
+            error: function(xhr) {
                 $('#' + loadingId).remove();
-                $('#chat-box').append('<div class="msg-group msg-ai"><div class="msg-label">Hệ Thống Trợ Lý</div><div class="msg-content" style="color: #ff6b6b;">Lỗi: Không thể kết nối đến máy chủ AI. Vui lòng kiểm tra cấu hình mạng hoặc API Key.</div></div>');
+                console.error('Gemini API status:', xhr.status);
+                console.error('Gemini API response:', xhr.responseText);
+                let errorMessage = 'Lỗi: Không thể kết nối đến máy chủ AI.';
+                try {
+                    let errorData = JSON.parse(xhr.responseText);
+                    if (errorData.error && errorData.error.message) {
+                        errorMessage += '<br><small>Chi tiết: ' + errorData.error.message + '</small>';
+                    }
+                } catch (e) {
+                    errorMessage += '<br><small>Không đọc được chi tiết lỗi từ máy chủ.</small>';
+                }
+                $('#chat-box').append(
+                    '<div class="msg-group msg-ai">' +
+                        '<div class="msg-label">Hệ Thống Trợ Lý</div>' + 
+                        '<div class="msg-content" style="color: #ff6b6b;">' + errorMessage + '</div>' +
+                    '</div>'
+                );
             }
         });
     });
