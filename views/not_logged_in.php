@@ -11,7 +11,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
         body { background: linear-gradient(180deg, #1E2A38 0%, #178978 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }        .login-container { background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; max-width: 450px; width: 100%; animation: slideIn 0.5s ease-out; position: relative; }
         @keyframes slideIn { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        .login-header { background: #178978; padding: 40px 30px; text-align: center; color: #ffffff; }
+        .login-header { background: linear-gradient(135deg, #0f172a 0%, #1E2A38 100%); padding: 40px 30px; text-align: center; color: #ffffff; }
         .login-header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; display:flex; align-items:center; justify-content:center; gap:10px; }
         .login-body { padding: 30px 30px; }
         .message-box { padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem; }
@@ -21,7 +21,7 @@
         .form-group label { display: block; margin-bottom: 8px; color: #1e3d59; font-weight: 600; font-size: 0.9rem; }
         .login_input { width: 100%; padding: 14px 16px; border: 2px solid #e0e6ed; border-radius: 8px; font-size: 1rem; background-color: #f8fafc; transition: all 0.3s ease; }
         .login_input:focus { outline: none; border-color: #178978; background-color: #ffffff; }
-        .btn-login { width: 100%; padding: 14px; background: #1E2A38; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-login { width: 100%; padding: 14px; background: linear-gradient(135deg, #0f172a 0%, #1E2A38 100%); color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
         .social-divider { display: flex; align-items: center; text-align: center; margin: 25px 0; color: #8898aa; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
         .social-divider::before, .social-divider::after { content: ''; flex: 1; border-bottom: 1px solid #e0e6ed; }
         .social-divider:not(:empty)::before { margin-right: .75em; }
