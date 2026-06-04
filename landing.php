@@ -161,22 +161,41 @@ if (isset($_SESSION['user_login_status']) && $_SESSION['user_login_status'] == 1
         .social-icon { color: white; opacity: 0.9; margin-left: 8px; }
         
         /* ===== FLOWLINK SCM - EMERALD GRADIENT HERO ===== */
-        .hero, .hero-section, .landing-hero {background:
-            radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 28%),
-            radial-gradient(circle at 85% 15%, rgba(5, 150, 105, 0.28), transparent 32%),
-            linear-gradient(135deg, #022c22 0%, #064e3b 35%, #059669 70%, #a7f3d0 100%) !important;
+        .hero,
+        .hero-section,
+        .landing-hero {
+            background: linear-gradient(
+                180deg,
+                #022c22 0%,
+                #064e3b 38%,
+                #059669 74%,
+                #a7f3d0 100%
+            ) !important;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
         }
         .hero::before,
         .hero-section::before,
         .landing-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
             background: linear-gradient(
-                135deg,
-                rgba(2, 44, 34, 0.78),
-                rgba(6, 78, 59, 0.58),
-                rgba(16, 185, 129, 0.18)
+                180deg,
+                rgba(2, 44, 34, 0.22) 0%,
+                rgba(6, 78, 59, 0.10) 48%,
+                rgba(167, 243, 208, 0.10) 100%
             ) !important;
+            pointer-events: none;
+            z-index: 0;
         }
-        
+        .hero .container,
+        .hero-section .container,
+        .landing-hero .container {
+            position: relative;
+            z-index: 2;
+        }
         /* Badge: GIẢI PHÁP VẬN HÀNH KHO 4.0 */
         .hero .badge,
         .hero-section .badge,
